@@ -100,25 +100,30 @@ def on_message(ws, message):
 
 def gen_params(appid, question):
     """
-    通过appid和用户的提问来生成请参数
+    通过appid和用户的提问, 生成请求参数
     """
     data = {
         "header": {
-            "app_id": appid,
-            "uid": "1234"
+            "app_id": appid,    # AppID
+            "uid": "1234"       # 用于区分不同的用户
         },
         "parameter": {
             "chat": {
-                "domain": "general",
-                "random_threshold": 0.5,
-                "max_tokens": 2048,
+                "domain": "general",        # (必)指定访问的领域
+                "random_threshold": 0.5,    # 温度系数temperature
+                "max_tokens": 2048,         # 模型回答的tokens的最大长度,范围为[1,4096]
                 "auditing": "default"
+                # "top_k": 4                # 从k个候选中随机选择⼀个（⾮等概率）,范围为[1,6]
+                # "chat_id": "1234"         # 用于关联用户会话,需要保障用户对话的唯一性
             }
         },
         "payload": {
             "message": {
                 "text": [
-                    {"role": "user", "content": question}
+                    {
+                        "role": "user",         # 对话角色,范围为[user,assistant]
+                        "content": question     # 用户和AI的对话内容,text下所有content累计tokens需要控制在8192内
+                     }
                 ]
             }
         }
