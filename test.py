@@ -11,7 +11,7 @@ from time import mktime
 from urllib.parse import urlencode
 from wsgiref.handlers import format_date_time
 
-import websocket
+import websockets
 
 class Ws_Param(object):
     # 初始化
@@ -122,9 +122,9 @@ def gen_params(appid, question):
 
 def main(appid, api_key, api_secret, gpt_url, question):
     wsParam = Ws_Param(appid, api_key, api_secret, gpt_url)
-    websocket.enableTrace(False)
+    websockets.enableTrace(False)
     wsUrl = wsParam.create_url()
-    ws = websocket.WebSocketApp(wsUrl, on_message=on_message, on_error=on_error, on_close=on_close, on_open=on_open)
+    ws = websockets.WebSocketApp(wsUrl, on_message=on_message, on_error=on_error, on_close=on_close, on_open=on_open)
     ws.appid = appid
     ws.question = question
     ws.run_forever(sslopt={"cert_reqs": ssl.CERT_NONE})
