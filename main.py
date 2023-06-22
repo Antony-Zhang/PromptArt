@@ -104,14 +104,14 @@ def gen_params(appid, question):
     """
     data = {
         "header": {
-            "app_id": appid,    # AppID
-            "uid": "1234"       # 用于区分不同的用户
+            "app_id": appid,  # AppID
+            "uid": "1234"  # 用于区分不同的用户
         },
         "parameter": {
             "chat": {
-                "domain": "general",        # (必)指定访问的领域
-                "random_threshold": 0.5,    # 温度系数temperature
-                "max_tokens": 2048,         # 模型回答的tokens的最大长度,范围为[1,4096]
+                "domain": "general",  # (必)指定访问的领域
+                "random_threshold": 0,  # 温度系数temperature
+                "max_tokens": 2048,  # 模型回答的tokens的最大长度,范围为[1,4096]
                 "auditing": "default"
                 # "top_k": 4                # 从k个候选中随机选择⼀个（⾮等概率）,范围为[1,6]
                 # "chat_id": "1234"         # 用于关联用户会话,需要保障用户对话的唯一性
@@ -121,9 +121,9 @@ def gen_params(appid, question):
             "message": {
                 "text": [
                     {
-                        "role": "user",         # 对话角色,范围为[user,assistant]
-                        "content": question     # 用户和AI的对话内容,text下所有content累计tokens需要控制在8192内
-                     }
+                        "role": "user",  # 对话角色,范围为[user,assistant]
+                        "content": question  # 用户和AI的对话内容,text下所有content累计tokens需要控制在8192内
+                    }
                 ]
             }
         }
@@ -131,20 +131,36 @@ def gen_params(appid, question):
     return data
 
 
-def main(appid, api_key, api_secret, gpt_url, question):
-    wsParam = Ws_Param(appid, api_key, api_secret, gpt_url)
+def main(Ws_Param, question):
     websocket.enableTrace(False)
     wsUrl = wsParam.create_url()
     ws = websocket.WebSocketApp(wsUrl, on_message=on_message, on_error=on_error, on_close=on_close, on_open=on_open)
-    ws.appid = appid
+    ws.appid = Ws_Param.APPID
     ws.question = question
-    ws.run_forever(sslopt={"cert_reqs": ssl.CERT_NONE})
+    ws.run_forever(sslopt={"cert_reqs": ssl.CERT_NONE})  # 建立长连接
 
 
 if __name__ == "__main__":
-    # 测试时候在此处正确填写相关信息即可运行
-    main(appid="5e683bc7",
-         api_key="850c8c6af18250377f05ba90bd0c7dc9",
-         api_secret="NmQzZGJjOWEwYmM2MTgxZjM3NzI5MzA2",
-         gpt_url="wss://spark-api.xf-yun.com/v1.1/chat",
-         question="你是谁？你能做什么？")
+    wsParam = Ws_Param("5e683bc7",
+                       "850c8c6af18250377f05ba90bd0c7dc9",
+                       "NmQzZGJjOWEwYmM2MTgxZjM3NzI5MzA2",
+                       "wss://spark-api.xf-yun.com/v1.1/chat")
+
+    print("请开始对话吧!!")
+    txt = input("\n(输入-1结束对话)文案:")
+    # 机械的循环交互,但不知道长连接本身是否可支持
+    while txt != "-1":
+        Prompt = f'''
+        [任务]
+
+        [格式]
+
+        [示例]
+
+        [输入]
+        {txt}
+        [输出]
+
+        '''
+        main(wsParam, Prompt)
+        txt = input("\n(输入-1结束对话)文案:")
