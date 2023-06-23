@@ -1,7 +1,6 @@
 
 """
     与星火Web服务器交互的核心模块
-
 """
 
 import _thread as thread
