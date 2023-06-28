@@ -1,12 +1,13 @@
-import WS
 """
     情感识别+意象识别
 """
+import WS
+
 
 class ImageAnalysis:
     @classmethod
     def image_analyze(cls, txt):
-        ws = WS.Ws_Param()
+        ws = WS.WsParam()
         prompt = f'''
                     你将获得一段文案,需要识别以下内容:
                     - 核心情感

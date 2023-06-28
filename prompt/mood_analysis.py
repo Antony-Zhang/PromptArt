@@ -1,12 +1,13 @@
-import WS
 """
     在意象识别ImageAnalysis中一起进行,本文件不单独作为模块
 """
+import WS
+
 
 class MoodAnalysis:
     @classmethod
     def mood_analyze(cls, txt):
-        ws = WS.Ws_Param()
+        ws = WS.WsParam()
         prompt = f'''
             你将获得一段文案,任务是对文案作者的核心情感进行识别和提取,得到不超过2个情感类型;
             注意,需要识别的是情感类型,如“喜悦”、“兴奋”,而不是情感取向,如“正向”、“中性”;

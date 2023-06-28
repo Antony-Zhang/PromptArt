@@ -1,16 +1,16 @@
-# -*- codeing = utf-8 -*-
+# -*- coding = utf-8 -*-
 # @Time : 2023-06-24 10:55
 # @Author : Shelly
-# @File : Poem_Trans.py
+# @File : poem_trans.py
 # @Software : PyCharm
 
 import WS
 
 
-class Poem_Trans:
+class PoemTrans:
     @classmethod
-    def poemTrans(cls, txt):
-        ws = WS.Ws_Param()
+    def poem_trans(cls, txt):
+        ws = WS.WsParam()
         prompt = f'''
             [角色]
             你是一个专业的中英翻译家和古诗词研究者
