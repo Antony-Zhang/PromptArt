@@ -1,4 +1,4 @@
-# -*- coding = utf-8 -*-
+# -*- codeing = utf-8 -*-
 # @Time : 2023-06-28 14:43
 # @Author : Shelly
 # @File : pu_trans.py
@@ -8,10 +8,9 @@
 """
 import WS
 
-
-class PuTrans:
+class pu_trans:
     @classmethod
-    def pu_trans(cls, txt):
+    def puTrans(cls, txt):
         ws = WS.WsParam()
         prompt = f'''
             [知识]
@@ -26,9 +25,8 @@ class PuTrans:
             2、对每个短句进行翻译
             3、将翻译结果进行整合，总结概括
             4、用第一人称讲故事的形式得到最终结果
-            5、到
             [格式]
-            只输出最终整合得到的古诗对应普通话表示，不用输出诗歌相关背景信息
+            只输出最终整合得到的古诗对应白话文表示，不用输出诗歌相关背景信息
             [文案]
             {txt}
         '''
