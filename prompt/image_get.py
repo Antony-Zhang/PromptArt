@@ -1,21 +1,19 @@
-# -*- codeing = utf-8 -*-
+# -*- coding = utf-8 -*-
 # @Time : 2023-06-28 14:41
 # @Author : Shelly
 # @File : image_get.py
 # @Software : PyCharm
-
-
-import WS
-
 """
     意象识别
 """
 
+import WS
 
-class Image_Get:
+
+class ImageGet:
     @classmethod
-    def getImage(cls, txt):
-        ws = WS.Ws_Param()
+    def get_image(cls, txt):
+        ws = WS.WsParam()
         prompt = f'''
                 [知识]
                 客观物象经过创作主体独特的情感活动而创造出来的一种艺术形象，多用于艺术通象，是一种信息的形象。

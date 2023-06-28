@@ -45,8 +45,10 @@ class WsParam(object):
         self.host = urlparse(self.gpt_url).netloc
         self.path = urlparse(self.gpt_url).path
 
-    # 生成url [host主机 + date时间戳(RFC1123格式) + authorization认证信息]
     def create_url(self):
+        """
+        生成url [host主机 + date时间戳(RFC1123格式) + authorization认证信息]
+        """
         # (可对参数进行逐步打印确认)
         # 生成参数:时间戳date(RFC1123格式)
         now = datetime.now()
@@ -83,18 +85,26 @@ class WsParam(object):
         return url
 
 
-# 收到websocket错误的处理
 def on_error(ws, error):
+    """
+    收到websocket错误的处理
+    """
     print("### error:", error)
 
 
-# 收到websocket关闭的处理
 def on_close(ws):
+    """
+    收到websocket关闭的处理
+    """
     print("### closed ###")
 
 
-# 收到websocket连接建立的处理
 def on_open(ws):
+    """
+    收到websocket连接建立的处理
+    :param ws:
+    :return:
+    """
     thread.start_new_thread(run, (ws,))
 
 
@@ -103,8 +113,13 @@ def run(ws, *args):
     ws.send(data)
 
 
-# 收到websocket消息的处理
 def on_message(ws, message):
+    """
+    到websocket消息的处理
+    :param ws:
+    :param message:
+    :return:
+    """
     data = json.loads(message)  # 将JSON字符串转化为Python对象
     code = data['header']['code']
     if code != 0:

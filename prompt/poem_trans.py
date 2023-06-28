@@ -3,7 +3,9 @@
 # @Author : Shelly
 # @File : poem_trans.py
 # @Software : PyCharm
-
+"""
+    古诗中英翻译
+"""
 import WS
 
 

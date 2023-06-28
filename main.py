@@ -1,6 +1,5 @@
 import prompt.desc_expand as desc_expand
 
-
 if __name__ == "__main__":
     print("请开始对话吧!!")
 
@@ -18,10 +17,10 @@ if __name__ == "__main__":
         # # 情绪识别
         # MoodAnalysis.MoodAnalysis.mood_analyze
         # 古诗翻译
-        #Poem_Trans.Poem_Trans.poemTrans(txt)
+        # Poem_Trans.Poem_Trans.poemTrans(txt)
         # 古诗白话文赏析
         # Pu_Trans.Pu_Trans.puTrans(txt)
 
         # 意象提取
-        #Image_Get.Image_Get.getImage(txt)
+        # Image_Get.Image_Get.getImage(txt)
         txt = input("\n(输入-1结束对话)文案:")

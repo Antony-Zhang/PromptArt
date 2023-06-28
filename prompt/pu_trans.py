@@ -1,20 +1,18 @@
-# -*- codeing = utf-8 -*-
+# -*- coding = utf-8 -*-
 # @Time : 2023-06-28 14:43
 # @Author : Shelly
 # @File : pu_trans.py
 # @Software : PyCharm
-
-# -*- codeing = utf-8 -*-
-# @Time : 2023-06-24 11:32
-# @Author : Shelly
-# @File : Pu_Trans.py
-# @Software : PyCharm
+"""
+    诗歌转白话文
+"""
 import WS
 
-class Pu_Trans:
+
+class PuTrans:
     @classmethod
-    def puTrans(cls, txt):
-        ws = WS.Ws_Param()
+    def pu_trans(cls, txt):
+        ws = WS.WsParam()
         prompt = f'''
             [知识]
             理解古诗词可以从作者生平经历、诗歌创作的历史背景等入手
