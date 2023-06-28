@@ -1,8 +1,6 @@
-
 """
     与星火Web服务器交互的核心模块
 """
-
 import _thread as thread
 import base64
 import datetime
@@ -34,7 +32,7 @@ class Singleton(object):
 
 
 @Singleton
-class Ws_Param(object):
+class WsParam(object):
     """
     交互参数类
     """
@@ -154,10 +152,10 @@ def gen_params(appid, question):
     return data
 
 
-def main(Ws_Param, question):
+def main(ws_param, question):
     websocket.enableTrace(False)
-    wsUrl = Ws_Param.create_url()
+    wsUrl = ws_param.create_url()
     ws = websocket.WebSocketApp(wsUrl, on_message=on_message, on_error=on_error, on_close=on_close, on_open=on_open)
-    ws.appid = Ws_Param.APPID
+    ws.appid = ws_param.APPID
     ws.question = question
     ws.run_forever(sslopt={"cert_reqs": ssl.CERT_NONE})  # 建立长连接
