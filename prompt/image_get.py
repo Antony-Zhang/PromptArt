@@ -1,4 +1,4 @@
-# -*- coding = utf-8 -*-
+# -*- codeing = utf-8 -*-
 # @Time : 2023-06-28 14:41
 # @Author : Shelly
 # @File : image_get.py
@@ -9,10 +9,9 @@
 
 import WS
 
-
-class ImageGet:
+class image_get:
     @classmethod
-    def get_image(cls, txt):
+    def getImage(cls, txt):
         ws = WS.WsParam()
         prompt = f'''
                 [知识]
