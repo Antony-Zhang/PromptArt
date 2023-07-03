@@ -19,11 +19,12 @@ from langchain.prompts import PromptTemplate
 from langchain.chains import LLMChain, SimpleSequentialChain
 
 import websocket
-from web_interact import Singleton, WsParam, WS
-from web_interact import (on_close,
-                          on_open,
-                          on_error,
-                          on_message)
+from LLM.web_interact import Singleton, WsParam, WS
+from LLM.web_interact import (on_close,
+                              on_open,
+                              on_error,
+                              on_message)
+
 
 # class SparkDeskEmbedding(LLM):
 #     """
@@ -58,10 +59,10 @@ class SparkDesk(LLM):
         return _param_dict
 
     def _call(
-        self,
-        prompt: str,
-        stop: Optional[List[str]] = None,
-        run_manager: Optional[CallbackManagerForLLMRun] = None,
+            self,
+            prompt: str,
+            stop: Optional[List[str]] = None,
+            run_manager: Optional[CallbackManagerForLLMRun] = None,
     ) -> str:
         """
 
@@ -93,7 +94,7 @@ if __name__ == "__main__":
         template="我的邻居姓{lastname}，他生了个儿子，给他儿子起个名字",
     )
     chain_1 = LLMChain(llm=llm,
-                     prompt=prompt_1)
+                       prompt=prompt_1)
     # 创建第二条链
     prompt_2 = PromptTemplate(
         input_variables=["child_name"],
@@ -106,6 +107,7 @@ if __name__ == "__main__":
 
     # 执行链，只需要传入第一个参数
     catchphrase = overall_chain.run("王")
+    print(catchphrase)
 
 # # 使用代理来确定如何使用LLM来采取行动
 # # 这里省略代理的定义
