@@ -7,7 +7,8 @@
     意象识别
 """
 
-import WS
+from LLM import web_interact
+
 
 class image_get:
     @classmethod
@@ -33,4 +34,4 @@ class image_get:
                 [文案]
                 {txt}
                 '''
-        WS.main(ws, prompt)
+        websocket.main(ws, prompt)

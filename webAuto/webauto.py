@@ -54,7 +54,3 @@ class WebAuto:
     def enter_bot_center(self):
         self.browser.find_element(By.XPATH, "//*[@id='root']/main/section[1]/div[3]/div").click()
 
-
-# if __name__ == "__main__":
-#     web = WebAuto()
-#     web.login_cookies()

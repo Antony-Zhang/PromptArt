@@ -6,7 +6,8 @@
 """
     诗歌转白话文
 """
-import WS
+from LLM import web_interact
+
 
 class pu_trans:
     @classmethod
@@ -31,4 +32,4 @@ class pu_trans:
             {txt}
         '''
 
-        WS.main(ws, prompt)
+        websocket.main(ws, prompt)

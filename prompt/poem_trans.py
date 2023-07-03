@@ -6,13 +6,13 @@
 """
     古诗中英翻译
 """
-import WS
+from LLM import web_interact
 
 
 class PoemTrans:
     @classmethod
     def trans(cls, txt):
-        ws = WS.WsParam()
+        ws = websocket.WsParam()
         prompt = f'''
             [角色]
             你是一个专业的中英翻译家和古诗词研究者

@@ -21,6 +21,7 @@ class Singleton(object):
     """
     类装饰器,用于实现单例模式
     """
+
     def __init__(self, cls):
         self._cls = cls
         self._instance = {}
@@ -31,24 +32,25 @@ class Singleton(object):
         return self._instance[self._cls]
 
 
-@Singleton
 class WsParam(object):
     """
     交互参数类
     """
-    # 初始化
-    def __init__(self):
-        self.APPID = "5e683bc7"
-        self.APIKey = "850c8c6af18250377f05ba90bd0c7dc9"
-        self.APISecret = "NmQzZGJjOWEwYmM2MTgxZjM3NzI5MzA2"
-        self.gpt_url = "wss://spark-api.xf-yun.com/v1.1/chat"
-        self.host = urlparse(self.gpt_url).netloc
-        self.path = urlparse(self.gpt_url).path
+    # 正常交互
+    url = "wss://spark-api.xf-yun.com/v1.1/chat"
+    host = urlparse(url).netloc
+    path = urlparse(url).path
+
+    def __init__(self, app_id, api_key, api_secret):
+        self.APPID = app_id
+        self.APIKey = api_key
+        self.APISecret = api_secret
 
     def create_url(self):
         """
         生成url [host主机 + date时间戳(RFC1123格式) + authorization认证信息]
         """
+        # print("create_url启动")
         # (可对参数进行逐步打印确认)
         # 生成参数:时间戳date(RFC1123格式)
         now = datetime.now()
@@ -73,7 +75,6 @@ class WsParam(object):
 
         # 进行base64编码生成最终认证信息authorization
         authorization = base64.b64encode(authorization_origin.encode('utf-8')).decode(encoding='utf-8')
-
         # 将请求的鉴权参数组合为字典
         v = {
             "authorization": authorization,
@@ -81,8 +82,24 @@ class WsParam(object):
             "host": self.host
         }
         # 拼接鉴权参数，生成url
-        url = self.gpt_url + '?' + urlencode(v)
-        return url
+        url_final = self.url + '?' + urlencode(v)
+        # print("create_url完成")
+        return url_final
+
+
+class WS(websocket.WebSocketApp):
+    """
+    WebSocketApp子类，添加消息变量
+    """
+
+    def __init__(self, appid, url, on_message, on_error, on_close, on_open):
+        self.appid = appid
+        self.received_message = ""
+        super(WS, self).__init__(url=url,
+                                 on_message=on_message,
+                                 on_error=on_error,
+                                 on_close=on_close,
+                                 on_open=on_open)
 
 
 def on_error(ws, error):
@@ -102,13 +119,13 @@ def on_close(ws):
 def on_open(ws):
     """
     收到websocket连接建立的处理
-    :param ws:
-    :return:
     """
+    # print("### open ###")
     thread.start_new_thread(run, (ws,))
 
 
 def run(ws, *args):
+    # print("### run ###")
     data = json.dumps(gen_params(appid=ws.appid, question=ws.question))
     ws.send(data)
 
@@ -120,24 +137,32 @@ def on_message(ws, message):
     :param message:
     :return:
     """
+    # print("### message ###")
     data = json.loads(message)  # 将JSON字符串转化为Python对象
     code = data['header']['code']
     if code != 0:
         print(f'请求错误: {code}, {data}')
         ws.close()
+        # print("# closed 1 #")
     else:
-        choices = data["payload"]["choices"]
-        status = choices["status"]
-        content = choices["text"][0]["content"]
-        print(content, end='')
-        if status == 2:
+        choices = data["payload"]["choices"]  # 有效载荷数据
+        status = choices["status"]  # 消息的状态
+        content = choices["text"][0]["content"]  # 消息的内容
+        # 存储返回的消息
+        ws.received_message += content
+
+        # print(ws.received_message)
+        if status == 2:  # 判断末尾消息
             ws.close()
+            # print("# closed 2 #")
+            # print(ws.received_message)
 
 
 def gen_params(appid, question):
     """
-    通过appid和用户的提问, 生成请求参数
-    """
+        通过appid和用户的提问, 生成请求参数
+        """
+    # print("gen_params启动")
     data = {
         "header": {
             "app_id": appid,  # AppID
@@ -164,13 +189,28 @@ def gen_params(appid, question):
             }
         }
     }
+    # print("gen_params完成")
     return data
 
 
-def main(ws_param, question):
-    websocket.enableTrace(False)
-    wsUrl = ws_param.create_url()
-    ws = websocket.WebSocketApp(wsUrl, on_message=on_message, on_error=on_error, on_close=on_close, on_open=on_open)
-    ws.appid = ws_param.APPID
-    ws.question = question
-    ws.run_forever(sslopt={"cert_reqs": ssl.CERT_NONE})  # 建立长连接
+# def main(ws_param, question):
+#     websocket.enableTrace(False)
+#     wsUrl = ws_param.create_url()
+#     ws = WS(appid=ws_param.APPID,
+#             url=wsUrl,
+#             on_message=on_message,
+#             on_error=on_error,
+#             on_close=on_close,
+#             on_open=on_open)
+#     ws.question = question
+#     ws.run_forever(sslopt={"cert_reqs": ssl.CERT_NONE})  # 建立长连接
+#
+#
+# if __name__ == "__main__":
+#     ws = WsParam("5e683bc7",
+#                  "850c8c6af18250377f05ba90bd0c7dc9",
+#                  "NmQzZGJjOWEwYmM2MTgxZjM3NzI5MzA2")
+#     txt = input("Q:")
+#     while txt != "-1":
+#         main(ws, txt)
+#         txt = input("Q:")

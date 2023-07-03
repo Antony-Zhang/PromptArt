@@ -1,3 +1,4 @@
+import prompt.pu_trans as pu
 import prompt.desc_expand as desc_expand
 import prompt.content_get as content_get
 import prompt.pu_trans as pu_trans

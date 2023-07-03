@@ -9,13 +9,13 @@
     根据古诗,对绘画内容进行畅想和描述(扩写)，并简单总结主体、主旨与色调;
     在古诗基础上,描述应是尽可能丰富的扩写,同时也必须尽可能详细，并突出主体。
 """
-import WS
+from LLM import web_interact
 
 
 class DescExpand:
     @classmethod
     def expand(cls,txt):
-        ws = WS.WsParam()
+        ws = websocket.WsParam()
         prompt = f'''
             [身份]
             你是一位专业的画师,专门为书籍中优美的文字绘画配图,具有崇高的艺术追求和绝佳的鉴赏能力;
@@ -40,4 +40,4 @@ class DescExpand:
             [文字]
             {txt}
         '''
-        WS.main(ws, prompt)
+        websocket.main(ws, prompt)
