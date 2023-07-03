@@ -8,7 +8,6 @@ import hashlib
 import hmac
 import json
 from urllib.parse import urlparse
-import ssl
 from datetime import datetime
 from time import mktime
 from urllib.parse import urlencode

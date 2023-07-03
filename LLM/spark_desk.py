@@ -16,7 +16,7 @@ import ssl
 from langchain.llms.base import LLM
 from langchain.callbacks.manager import CallbackManagerForLLMRun
 from langchain.prompts import PromptTemplate
-from langchain.chains import LLMChain
+from langchain.chains import LLMChain, SimpleSequentialChain
 
 import websocket
 from web_interact import Singleton, WsParam, WS
@@ -63,6 +63,13 @@ class SparkDesk(LLM):
         stop: Optional[List[str]] = None,
         run_manager: Optional[CallbackManagerForLLMRun] = None,
     ) -> str:
+        """
+
+        :param prompt:
+        :param stop:
+        :param run_manager:
+        :return:
+        """
         ws_param = WsParam(os.getenv("APPID"), os.getenv("APIKEY"), os.getenv("APISECRET"))
         websocket.enableTrace(False)
         wsUrl = ws_param.create_url()
@@ -79,29 +86,27 @@ class SparkDesk(LLM):
 
 if __name__ == "__main__":
     llm = SparkDesk()
-    print(llm("请说‘你好’"))
 
+    # test
+    prompt_1 = PromptTemplate(
+        input_variables=["lastname"],
+        template="我的邻居姓{lastname}，他生了个儿子，给他儿子起个名字",
+    )
+    chain_1 = LLMChain(llm=llm,
+                     prompt=prompt_1)
+    # 创建第二条链
+    prompt_2 = PromptTemplate(
+        input_variables=["child_name"],
+        template="邻居的儿子名字叫{child_name}，给他起一个小名",
+    )
+    chain_2 = LLMChain(llm=llm, prompt=prompt_2)
 
-# if __name__ == "__main__":
-#     llm = SparkDesk()
-#     while True:
-#         human_input = input("Human: ")
-#
-#         begin_time = time.time() * 1000
-#         # 请求模型
-#         response = llm(human_input, stop=["you"])
-#         end_time = time.time() * 1000
-#         used_time = round(end_time - begin_time, 3)
-#         logging.info(f"chatGLM process time: {used_time}ms")
-#
-#         print(f"ChatGLM: {response}")
+    # 链接两条链
+    overall_chain = SimpleSequentialChain(chains=[chain_1, chain_2], verbose=True)
 
-# # 创建一个LLM实例并定义相应的提示来生成响应
-# prompt = PromptTemplate(input_variables=["question"], template="What is the answer to {question}?")
-#
-# # 使用链来将LLM与其他计算或知识源组合起来
-# chain = LLMChain(llm=llm, prompt=prompt)
-#
+    # 执行链，只需要传入第一个参数
+    catchphrase = overall_chain.run("王")
+
 # # 使用代理来确定如何使用LLM来采取行动
 # # 这里省略代理的定义
 #
