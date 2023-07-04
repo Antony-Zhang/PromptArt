@@ -6,13 +6,12 @@
 """
     诗歌转白话文
 """
-from LLM import web_interact
 
 
 class pu_trans:
     @classmethod
     def puTrans(cls, txt):
-        ws = WS.WsParam()
+        ws = WS.WsParamGPT()
         prompt = f'''
             [知识]
             理解古诗词可以从作者生平经历、诗歌创作的历史背景等入手

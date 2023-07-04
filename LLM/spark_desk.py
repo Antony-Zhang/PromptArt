@@ -32,7 +32,7 @@ class SparkDesk(LLM):
     """
 
     url = "wss://spark-api.xf-yun.com/v1.1/chat"
-    APPID = os.getenv("APPID")
+    APPID = os.getenv("APPID")      # 环境变量
     APIKey = os.getenv("APIKEY")
     APISecret = os.getenv("APISECRET")
 

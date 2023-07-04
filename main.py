@@ -14,11 +14,15 @@ if __name__ == "__main__":
     poem_input = input("请输入诗句：")
     # 检索古诗
     poetry_dict = search_poem(poem_input)
-    # 场景切割(prompt待写入)
-    prompt_scene_get = load_prompt("prompts/content_get2.json")     # 从JSON文件读取prompt模版
+
+    # chain：场景切割(prompt待写入)
+    prompt_scene_get = load_prompt("prompts/scene_get.json")     # 从JSON文件读取prompt模版
     chain_scene_get = LLMChain(llm=llm, prompt=prompt_scene_get)
-    # 提取画面内容(JSON格式输出)
+    # chain: 提取画面内容(JSON格式输出)
     prompt_content_get2 = load_prompt("prompts/content_get2.json")
     chain_content_get = LLMChain(llm=llm, prompt=prompt_content_get2)
+    # 连接chain
+    overall_chain = SimpleSequentialChain(chains=[chain_scene_get, chain_content_get], verbose=True)
+    result = overall_chain.run("链路输入")
 
     # 前端呈现结果
