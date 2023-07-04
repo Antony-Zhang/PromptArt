@@ -8,9 +8,7 @@
     使用LangChain自定义LLM
 """
 import os
-import time
-import logging
-from typing import Optional, List, Dict, Mapping, Any
+from typing import Optional, List, Mapping, Any
 import ssl
 
 from langchain.llms.base import LLM
@@ -19,18 +17,12 @@ from langchain.prompts import PromptTemplate
 from langchain.chains import LLMChain, SimpleSequentialChain
 
 import websocket
-from LLM.web_interact import Singleton, WsParam, WS
-from LLM.web_interact import (on_close,
-                              on_open,
-                              on_error,
-                              on_message)
-
-
-# class SparkDeskEmbedding(LLM):
-#     """
-#     讯飞星火的Embedding模型
-#     """
-#     url = r'https://knowledge-retrieval.cn-huabei-1.xf-yun.com/v1/aiui/embedding/query'
+from LLM.webInteract.web_param import WsParamGPT
+from LLM.webInteract.web_interact_gpt import Singleton, WS
+from LLM.webInteract.web_interact_gpt import (on_close,
+                                              on_open,
+                                              on_error,
+                                              on_message)
 
 
 @Singleton
@@ -64,14 +56,7 @@ class SparkDesk(LLM):
             stop: Optional[List[str]] = None,
             run_manager: Optional[CallbackManagerForLLMRun] = None,
     ) -> str:
-        """
-
-        :param prompt:
-        :param stop:
-        :param run_manager:
-        :return:
-        """
-        ws_param = WsParam(os.getenv("APPID"), os.getenv("APIKEY"), os.getenv("APISECRET"))
+        ws_param = WsParamGPT(self.url, self.APPID, self.APIKey, self.APISecret)
         websocket.enableTrace(False)
         wsUrl = ws_param.create_url()
         ws = WS(appid=ws_param.APPID,
