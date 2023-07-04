@@ -4,13 +4,11 @@
 # @File : content_get.py
 # @Software : PyCharm
 
-from LLM import web_interact
-
 
 class content_get:
     @classmethod
     def getContent(cls, txt):
-        ws = websocket.WsParam()
+        ws = websocket.WsParamGPT()
         prompt = f'''
             [知识]
             对于给定文本，画师需要首先概括出画作所要重点描绘的主体以及灯光氛围、环境、构图等多个要素、理解作者所想要表达的情感，为真正绘图做准备。其中，主体出现在画面关键之处，通常有特定的修饰词，起突出强调画家情感的作用；是单一的一个对象或一组对象。环境指的是画面的主体周围的人物、景物和空间。

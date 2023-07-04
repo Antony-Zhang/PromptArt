@@ -7,13 +7,11 @@
     意象识别
 """
 
-from LLM import web_interact
-
 
 class image_get:
     @classmethod
     def getImage(cls, txt):
-        ws = WS.WsParam()
+        ws = WS.WsParamGPT()
         prompt = f'''
                 [知识]
                 客观物象经过创作主体独特的情感活动而创造出来的一种艺术形象，多用于艺术通象，是一种信息的形象。
