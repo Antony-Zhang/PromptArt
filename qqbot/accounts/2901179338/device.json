@@ -1,0 +1,39 @@
+{
+    "product": "Y60",
+    "device": "W-K510",
+    "board": "W-K510",
+    "brand": "Wiko",
+    "model": "W-K510-SUN",
+    "wifi_ssid": "TP-LINK_A4T3SN",
+    "android_id": "SP1A.210812.016.A2",
+    "boot_id": "0fef9dfe-96cd-eaa7-bff2-5ed63c8bf156",
+    "proc_version": "Linux version 3.15.80-RYtNQDWs (android-build@6cdeaa7bff25.source.android.com)",
+    "mac_address": "0F:EF:9D:FE:96:CD",
+    "ip_address": [
+        188,
+        1,
+        240,
+        91
+    ],
+    "imei": "074974366785380",
+    "incremental": "16264664",
+    "protocol": 2,
+    "display": "SP1A.210812.016.A2",
+    "finger_print": "Wiko/Y60/W-K510:10/SP1A.210812.016.A2/16264664:user/release-keys",
+    "baseband": "",
+    "sim": "T-Mobile",
+    "sim_info": "T-Mobile",
+    "os_type": "android",
+    "bootloader": "U-boot",
+    "wifi_bssid": "0F:EF:9D:FE:96:CD",
+    "apn": "wifi",
+    "version": {
+        "incremental": "16264664",
+        "release": "10",
+        "codename": "REL",
+        "sdk": 29
+    },
+    "imsi_md5": "0a50ceff321cb58aada1cd1d9eb361bf",
+    "vendor_name": "Wiko",
+    "vendor_os_name": "android"
+}

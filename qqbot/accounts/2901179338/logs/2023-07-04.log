@@ -1,0 +1,34 @@
+[2023-07-04 15:17:29] [WARNING]: 账号密码未配置, 将使用二维码登录. 
+[2023-07-04 15:17:29] [WARNING]: 警告: 未配置签名服务器, 这可能会导致登录 45 错误码或发送消息被风控 
+[2023-07-04 15:18:04] [WARNING]: Protocol -> device lock is disable. http api may fail. 
+[2023-07-04 16:06:33] [WARNING]: 警告: 未配置签名服务器, 这可能会导致登录 45 错误码或发送消息被风控 
+[2023-07-04 16:06:34] [WARNING]: Protocol -> device lock is disable. http api may fail. 
+[2023-07-04 16:08:00] [WARNING]: 警告: 未配置签名服务器, 这可能会导致登录 45 错误码或发送消息被风控 
+[2023-07-04 16:08:00] [WARNING]: Protocol -> device lock is disable. http api may fail. 
+[2023-07-04 16:38:15] [WARNING]: 警告: 未配置签名服务器, 这可能会导致登录 45 错误码或发送消息被风控 
+[2023-07-04 16:38:16] [WARNING]: Protocol -> device lock is disable. http api may fail. 
+[2023-07-04 16:38:50] [WARNING]: 警告: 未配置签名服务器, 这可能会导致登录 45 错误码或发送消息被风控 
+[2023-07-04 16:38:50] [WARNING]: Protocol -> device lock is disable. http api may fail. 
+[2023-07-04 16:39:38] [WARNING]: 警告: 未配置签名服务器, 这可能会导致登录 45 错误码或发送消息被风控 
+[2023-07-04 16:39:39] [WARNING]: Protocol -> device lock is disable. http api may fail. 
+[2023-07-04 16:42:16] [WARNING]: 警告: 未配置签名服务器, 这可能会导致登录 45 错误码或发送消息被风控 
+[2023-07-04 16:42:17] [WARNING]: Protocol -> device lock is disable. http api may fail. 
+[2023-07-04 16:53:25] [WARNING]: 警告: 未配置签名服务器, 这可能会导致登录 45 错误码或发送消息被风控 
+[2023-07-04 16:53:26] [WARNING]: Protocol -> device lock is disable. http api may fail. 
+[2023-07-04 17:03:12] [WARNING]: 警告: 未配置签名服务器, 这可能会导致登录 45 错误码或发送消息被风控 
+[2023-07-04 17:03:13] [WARNING]: Protocol -> device lock is disable. http api may fail. 
+[2023-07-04 17:04:15] [ERROR]: Protocol -> unexpected disconnect: read tcp 10.255.53.146:64731->121.229.94.199:8080: wsarecv: An established connection was aborted by the software in your host machine. 
+[2023-07-04 17:04:15] [ERROR]: Protocol -> connect server error: dial tcp error: dial tcp 183.2.144.33:8080: connectex: A socket operation was attempted to an unreachable network. 
+[2023-07-04 17:04:15] [ERROR]: Protocol -> connect server error: dial tcp error: dial tcp 183.2.144.33:8080: connectex: A socket operation was attempted to an unreachable network. 
+[2023-07-04 17:04:15] [WARNING]: Bot已离线: connection dropped by server. 
+[2023-07-04 17:04:18] [WARNING]: 将在 3 秒后尝试重连. 重连次数：2/0 
+[2023-07-04 17:04:21] [WARNING]: 尝试重连... 
+[2023-07-04 17:04:21] [WARNING]: Protocol -> device lock is disable. http api may fail. 
+[2023-07-04 17:30:49] [WARNING]: 警告: 未配置签名服务器, 这可能会导致登录 45 错误码或发送消息被风控 
+[2023-07-04 17:30:49] [WARNING]: Protocol -> device lock is disable. http api may fail. 
+[2023-07-04 17:33:21] [WARNING]: 警告: 未配置签名服务器, 这可能会导致登录 45 错误码或发送消息被风控 
+[2023-07-04 17:33:27] [WARNING]: Protocol -> device lock is disable. http api may fail. 
+[2023-07-04 17:35:23] [WARNING]: 警告: 未配置签名服务器, 这可能会导致登录 45 错误码或发送消息被风控 
+[2023-07-04 17:35:24] [WARNING]: Protocol -> device lock is disable. http api may fail. 
+[2023-07-04 17:38:25] [WARNING]: 警告: 未配置签名服务器, 这可能会导致登录 45 错误码或发送消息被风控 
+[2023-07-04 17:38:26] [WARNING]: Protocol -> device lock is disable. http api may fail. 
