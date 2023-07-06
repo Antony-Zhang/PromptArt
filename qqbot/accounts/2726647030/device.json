@@ -1,0 +1,39 @@
+{
+    "product": "Maxvi_MS401",
+    "device": "Maxvi_MS401",
+    "board": "Maxvi_MS401",
+    "brand": "Maxvi",
+    "model": "Maxvi_MS401",
+    "wifi_ssid": "TP-LINK_1PL7V7",
+    "android_id": "6037697",
+    "boot_id": "dfef7e5e-adaa-be3d-f4aa-e8b20116bf1e",
+    "proc_version": "Linux version 4.7.83-lPHMv3Hw (android-build@e3df4aae8b20.source.android.com)",
+    "mac_address": "DF:EF:7E:5E:AD:AA",
+    "ip_address": [
+        188,
+        219,
+        174,
+        122
+    ],
+    "imei": "632895851672883",
+    "incremental": "2858395960",
+    "protocol": 2,
+    "display": "6037697",
+    "finger_print": "Maxvi/Maxvi_MS401/Maxvi_MS401:10/6037697/2858395960:user/release-keys",
+    "baseband": "",
+    "sim": "T-Mobile",
+    "sim_info": "T-Mobile",
+    "os_type": "android",
+    "bootloader": "U-boot",
+    "wifi_bssid": "DF:EF:7E:5E:AD:AA",
+    "apn": "wifi",
+    "version": {
+        "incremental": "2858395960",
+        "release": "10",
+        "codename": "REL",
+        "sdk": 29
+    },
+    "imsi_md5": "c3fa41164acb8ee858fd0fa36246f188",
+    "vendor_name": "Maxvi",
+    "vendor_os_name": "android"
+}

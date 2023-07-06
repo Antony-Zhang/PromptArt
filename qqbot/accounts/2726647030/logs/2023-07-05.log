@@ -1,0 +1,29 @@
+[2023-07-05 20:59:10] [WARNING]: 账号密码未配置, 将使用二维码登录. 
+[2023-07-05 20:59:10] [WARNING]: 警告: 未配置签名服务器, 这可能会导致登录 45 错误码或发送消息被风控 
+[2023-07-05 20:59:26] [WARNING]: Protocol -> device lock is disable. http api may fail. 
+[2023-07-05 21:01:50] [WARNING]: 警告: 未配置签名服务器, 这可能会导致登录 45 错误码或发送消息被风控 
+[2023-07-05 21:01:56] [WARNING]: Protocol -> device lock is disable. http api may fail. 
+[2023-07-05 21:04:35] [WARNING]: 警告: 未配置签名服务器, 这可能会导致登录 45 错误码或发送消息被风控 
+[2023-07-05 21:04:36] [WARNING]: Protocol -> device lock is disable. http api may fail. 
+[2023-07-05 21:08:48] [WARNING]: 警告: 未配置签名服务器, 这可能会导致登录 45 错误码或发送消息被风控 
+[2023-07-05 21:08:48] [WARNING]: Protocol -> device lock is disable. http api may fail. 
+[2023-07-05 21:09:44] [WARNING]: 警告: 未配置签名服务器, 这可能会导致登录 45 错误码或发送消息被风控 
+[2023-07-05 21:09:45] [WARNING]: Protocol -> device lock is disable. http api may fail. 
+[2023-07-05 21:14:08] [WARNING]: 警告: 未配置签名服务器, 这可能会导致登录 45 错误码或发送消息被风控 
+[2023-07-05 21:14:08] [WARNING]: Protocol -> device lock is disable. http api may fail. 
+[2023-07-05 21:54:22] [WARNING]: 警告: 未配置签名服务器, 这可能会导致登录 45 错误码或发送消息被风控 
+[2023-07-05 21:54:23] [WARNING]: Protocol -> device lock is disable. http api may fail. 
+[2023-07-05 21:58:02] [WARNING]: 转换消息 [CQ:image,file=https://s.mj.run/ZA_-MFOZBtI,type=,cache=true,proxy=true,timeout=] 到MiraiGo Element时出现错误: Get "https://cdn.discordapp.com/attachments/1120201914768969870/1123449797534306346/mountain.png": context deadline exceeded (Client.Timeout exceeded while awaiting headers). 
+[2023-07-05 22:09:25] [WARNING]: 警告: 未配置签名服务器, 这可能会导致登录 45 错误码或发送消息被风控 
+[2023-07-05 22:09:26] [WARNING]: Protocol -> device lock is disable. http api may fail. 
+[2023-07-05 22:09:49] [WARNING]: 转换消息 [CQ:image,file=https://cdn.discordapp.com/attachments/1120201914768969870/1123449797534306346/mountain.png,type=,cache=true,proxy=true,timeout=] 到MiraiGo Element时出现错误: Get "https://cdn.discordapp.com/attachments/1120201914768969870/1123449797534306346/mountain.png": context deadline exceeded (Client.Timeout exceeded while awaiting headers). 
+[2023-07-05 22:15:48] [WARNING]: 警告: 未配置签名服务器, 这可能会导致登录 45 错误码或发送消息被风控 
+[2023-07-05 22:15:48] [WARNING]: Protocol -> device lock is disable. http api may fail. 
+[2023-07-05 22:16:19] [WARNING]: 转换消息 [CQ:image,file=https://cdn.discordapp.com/attachments/1120201914768969870/1123449797534306346/mountain.png,type=,cache=true,proxy=true,timeout=] 到MiraiGo Element时出现错误: Get "https://cdn.discordapp.com/attachments/1120201914768969870/1123449797534306346/mountain.png": context deadline exceeded (Client.Timeout exceeded while awaiting headers). 
+[2023-07-05 22:17:52] [WARNING]: 转换消息 [CQ:image,file=https://cdn.discordapp.com/attachments/1120201914768969870/1123449797534306346/mountain.png,type=,cache=true,proxy=true,timeout=] 到MiraiGo Element时出现错误: Get "https://cdn.discordapp.com/attachments/1120201914768969870/1123449797534306346/mountain.png": context deadline exceeded (Client.Timeout exceeded while awaiting headers). 
+[2023-07-05 22:44:06] [WARNING]: 警告: 未配置签名服务器, 这可能会导致登录 45 错误码或发送消息被风控 
+[2023-07-05 22:44:07] [WARNING]: Protocol -> device lock is disable. http api may fail. 
+[2023-07-05 22:45:30] [WARNING]: 警告: 未配置签名服务器, 这可能会导致登录 45 错误码或发送消息被风控 
+[2023-07-05 22:45:36] [WARNING]: Protocol -> device lock is disable. http api may fail. 
+[2023-07-05 22:47:46] [WARNING]: 警告: 未配置签名服务器, 这可能会导致登录 45 错误码或发送消息被风控 
+[2023-07-05 22:47:46] [WARNING]: Protocol -> device lock is disable. http api may fail. 
