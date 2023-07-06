@@ -28,14 +28,14 @@ def valid(text):
 
 
 # 图片地址和对应消息段
-file_path1 = r'D:\AIGC\PromptArt\img\1.png'
-file_path2 = r'D:\AIGC\PromptArt\img\2.png'
-file_path3 = r'D:\AIGC\PromptArt\img\3.png'
-file_path4 = r'D:\AIGC\PromptArt\img\4.png'
-file_path5 = r'D:\AIGC\PromptArt\img\5.png'
-file_path6 = r'D:\AIGC\PromptArt\img\6.png'
-file_path7 = r'D:\AIGC\PromptArt\img\7.png'
-file_path8 = r'D:\AIGC\PromptArt\img\8.png'
+file_path1 = r'D:\AIGC\PromptArt\resource\img\1.png'
+file_path2 = r'D:\AIGC\PromptArt\resource\img\2.png'
+file_path3 = r'D:\AIGC\PromptArt\resource\img\3.png'
+file_path4 = r'D:\AIGC\PromptArt\resource\img\4.png'
+file_path5 = r'D:\AIGC\PromptArt\resource\img\5.png'
+file_path6 = r'D:\AIGC\PromptArt\resource\img\6.png'
+file_path7 = r'D:\AIGC\PromptArt\resource\img\7.png'
+file_path8 = r'D:\AIGC\PromptArt\resource\img\8.png'
 image_seg1 = MessageSegment.image(file=f'file:///{file_path1}')
 image_seg2 = MessageSegment.image(file=f'file:///{file_path2}')
 image_seg3 = MessageSegment.image(file=f'file:///{file_path3}')
