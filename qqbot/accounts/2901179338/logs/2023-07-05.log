@@ -65,3 +65,32 @@
 [2023-07-05 17:48:40] [WARNING]: 群消息发送失败: 账号可能被风控. 
 [2023-07-05 17:50:50] [WARNING]: 群消息发送失败: 账号可能被风控. 
 [2023-07-05 17:51:23] [WARNING]: 群消息发送失败: 账号可能被风控. 
+[2023-07-05 20:48:50] [WARNING]: 警告: 未配置签名服务器, 这可能会导致登录 45 错误码或发送消息被风控 
+[2023-07-05 20:48:50] [WARNING]: Protocol -> device lock is disable. http api may fail. 
+[2023-07-05 20:49:30] [WARNING]: 群消息发送失败: 账号可能被风控. 
+[2023-07-05 20:51:51] [WARNING]: 群消息发送失败: 账号可能被风控. 
+[2023-07-05 20:57:29] [WARNING]: 群消息发送失败: 账号可能被风控. 
+[2023-07-05 20:59:10] [WARNING]: 警告: 未配置签名服务器, 这可能会导致登录 45 错误码或发送消息被风控 
+[2023-07-05 20:59:10] [WARNING]: Protocol -> device lock is disable. http api may fail. 
+[2023-07-05 21:01:50] [WARNING]: 警告: 未配置签名服务器, 这可能会导致登录 45 错误码或发送消息被风控 
+[2023-07-05 21:01:50] [WARNING]: Protocol -> device lock is disable. http api may fail. 
+[2023-07-05 21:04:35] [WARNING]: 警告: 未配置签名服务器, 这可能会导致登录 45 错误码或发送消息被风控 
+[2023-07-05 21:04:35] [WARNING]: Protocol -> device lock is disable. http api may fail. 
+[2023-07-05 21:08:47] [WARNING]: 警告: 未配置签名服务器, 这可能会导致登录 45 错误码或发送消息被风控 
+[2023-07-05 21:08:48] [WARNING]: Protocol -> device lock is disable. http api may fail. 
+[2023-07-05 21:09:44] [WARNING]: 警告: 未配置签名服务器, 这可能会导致登录 45 错误码或发送消息被风控 
+[2023-07-05 21:09:44] [WARNING]: Protocol -> device lock is disable. http api may fail. 
+[2023-07-05 21:14:07] [WARNING]: 警告: 未配置签名服务器, 这可能会导致登录 45 错误码或发送消息被风控 
+[2023-07-05 21:14:08] [WARNING]: Protocol -> device lock is disable. http api may fail. 
+[2023-07-05 21:54:22] [WARNING]: 警告: 未配置签名服务器, 这可能会导致登录 45 错误码或发送消息被风控 
+[2023-07-05 21:54:23] [WARNING]: Protocol -> device lock is disable. http api may fail. 
+[2023-07-05 22:09:25] [WARNING]: 警告: 未配置签名服务器, 这可能会导致登录 45 错误码或发送消息被风控 
+[2023-07-05 22:09:26] [WARNING]: Protocol -> device lock is disable. http api may fail. 
+[2023-07-05 22:15:47] [WARNING]: 警告: 未配置签名服务器, 这可能会导致登录 45 错误码或发送消息被风控 
+[2023-07-05 22:15:48] [WARNING]: Protocol -> device lock is disable. http api may fail. 
+[2023-07-05 22:44:05] [WARNING]: 警告: 未配置签名服务器, 这可能会导致登录 45 错误码或发送消息被风控 
+[2023-07-05 22:44:11] [WARNING]: Protocol -> device lock is disable. http api may fail. 
+[2023-07-05 22:45:30] [WARNING]: 警告: 未配置签名服务器, 这可能会导致登录 45 错误码或发送消息被风控 
+[2023-07-05 22:45:36] [WARNING]: Protocol -> device lock is disable. http api may fail. 
+[2023-07-05 22:47:45] [WARNING]: 警告: 未配置签名服务器, 这可能会导致登录 45 错误码或发送消息被风控 
+[2023-07-05 22:47:46] [WARNING]: Protocol -> device lock is disable. http api may fail. 

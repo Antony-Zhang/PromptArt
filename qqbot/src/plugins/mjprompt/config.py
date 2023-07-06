@@ -8,7 +8,7 @@ from LLM.spark_desk import SparkDesk
 from langchain.chains import LLMChain, SimpleSequentialChain
 from langchain.prompts import load_prompt
 
-from qqbot.src.plugins.style.config import StyleHolder as StyleHolder
+# from qqbot.src.plugins.style.config import StyleHolder as StyleHolder
 
 import re
 
@@ -28,6 +28,7 @@ def check(result):
 
     return True
 
+
 class Config(BaseModel, extra=Extra.ignore):
 
     """
@@ -35,22 +36,22 @@ class Config(BaseModel, extra=Extra.ignore):
     """
 
 
-word = on_keyword("/imagine", priority=10, block=True)
+prompt = on_keyword("imagine")
 
 
-@word.handle()
+@prompt.handle()
 async def prompt_gen(event: Event):
-
     content = str(event.get_message())
     # 去掉前面的关键字，只要诗句
     poem = content[9:]
     result = prompt_get(poem)
-    while(check(result) != True):
-        await word.send(result)
+    while not check(result):
+        # await word.send(result)
         result = prompt_get(poem)
-    message = MessageSegment.at(event.get_user_id()) + "\n" + result + ":: " + StyleHolder.get_style()
+    message = MessageSegment.at(event.get_user_id()) + "\n" + result + ":: "
+    # + StyleHolder.get_style()
 
-    await word.finish(message)
+    await prompt.finish(message)
 
 
 # 调用星火
