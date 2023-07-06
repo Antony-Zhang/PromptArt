@@ -11,8 +11,6 @@ import codecs
 from webSearch.web_search_poem import search_poem
 
 
-
-
 if __name__ == "__main__":
     # 创建大模型
     llm = SparkDesk()
@@ -20,7 +18,7 @@ if __name__ == "__main__":
     poem_input = input("请输入诗句：")
 
     # 检索古诗
-    #poetry_dict = search_poem(poem_input)
+    # poetry_dict = search_poem(poem_input)
     # 从字典中分割译文
     # poem_trans = poetry_dict["trans"]
 

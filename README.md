@@ -10,3 +10,4 @@
 - selenium-4.4.3 (pip)
 - scrapy-2.8.0
 - beautifulsoup4-4.12.2
+- nonebot

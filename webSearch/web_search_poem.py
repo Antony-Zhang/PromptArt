@@ -17,7 +17,7 @@ def search_poem(poem) -> Optional[dict[Any, Any]]:
     """
     实时Web检索古诗(第一首)
     :param poem: 诗句
-    :return: 古诗信息的字典["title", "author", "contents", "trans"]
+    :return: 古诗信息的字典["title", "author", "contents", "trans", "notes"]
     """
     # 进入搜索界面
     url_search = url + "/search.aspx?value=" + poem + "&valuej=" + poem[0]
